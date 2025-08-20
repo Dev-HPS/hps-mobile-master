@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "123660728988",
+    "firebase_url": "https://dmlt-sales-online.firebaseio.com",
+    "project_id": "dmlt-sales-online",
+    "storage_bucket": "dmlt-sales-online.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123660728988:android:795aa8218c99d8c3098b59",
+        "android_client_info": {
+          "package_name": "com.hastaprimasolusi.rana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123660728988-fnnmf56aoqt0nl0ggr36e51k0rkmafk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hastaprimasolusi.rana",
+            "certificate_hash": "dd879fd2ce8fd4b1924278f7f667ad979ae81bef"
+          }
+        },
+        {
+          "client_id": "123660728988-8gdao96bufg7mtpvjepbias52hbop2al.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrHKaciG7QdTC_Lv_Jqz_Cr8skFbj5VOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123660728988-8gdao96bufg7mtpvjepbias52hbop2al.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

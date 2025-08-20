@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuDashboard" android:title="@string/beranda"/>
+    <group android:checkableBehavior="single">
+        <item android:title="Laporan">
+            <menu>
+                <item android:id="@+id/navStok" android:title="Barang" />
+                <item android:id="@+id/navCanvaser" android:title="Canvasser" />
+                <item android:id="@+id/navWarung" android:title="Mitra" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="User">
+            <menu>
+                <item android:id="@+id/navUbahPassword" android:title="Ubah Password" />
+                <item android:id="@+id/navLogout" android:title="Logout" />
+            </menu>
+        </item>
+    </group>
+</menu>

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="?actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="@dimen/_10sdp"
+        android:id="@+id/layoutAksi"
+        android:background="#efefef"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/layoutBatal"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnBatalkan"
+                android:text="@string/batalkan"
+                android:backgroundTint="@color/red"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/layoutSelesai"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Pastikan pembayaran telah dilakukan sebelum melakukan penyerahan barang "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSelesai"
+                android:text="@string/selesaikan"
+                android:backgroundTint="@color/teal"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/layoutKonfirmasi"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnKonfirmasi"
+                android:text="@string/konfirmasi"
+                android:backgroundTint="@color/colorAccent"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnTolak"
+                android:text="@string/tolak"
+                android:backgroundTint="@color/red"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/layoutCheckout"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtKet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Pesanan telah dikonfirmasi, pilih metode pembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnPembayaran"
+                android:text="@string/pembayaran"
+                android:backgroundTint="@color/deep_orange"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layoutAksi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblStatus"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Status"
+                android:textStyle="bold"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblStatus"
+                style="@style/PaddingLine"
+                android:textSize="@dimen/_10ssp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtTanggal"
+                android:paddingRight="@dimen/_16sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/lblStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/line"
+                android:background="#eaeaea"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtStatus"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                android:textStyle="bold"
+                android:id="@+id/txtInvoice"
+                style="@style/PaddingLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/line1"
+                app:layout_constraintTop_toBottomOf="@id/txtInvoice"
+                android:background="#eaeaea"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/lblProduk"
+                style="@style/PaddingLine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1"
+                android:textStyle="bold"
+                android:text="@string/daftarpembelian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerProduk"
+                app:layout_constraintTop_toBottomOf="@id/lblProduk"
+                android:padding="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progressProduk"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblProduk"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/lineadd"
+                app:layout_constraintTop_toBottomOf="@id/recyclerProduk"
+                android:background="#eaeaea"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:alpha="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3sdp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutFrom"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lineadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgFrom"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp" />
+
+                <TextView
+                    android:id="@+id/txtFromNama"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/imgFrom"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txtFromAlamat"
+                    android:textSize="@dimen/_9ssp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/imgFrom"
+                    app:layout_constraintTop_toBottomOf="@id/txtFromNama"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txtFromPhone"
+                    android:textSize="@dimen/_9ssp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@id/imgFrom"
+                    app:layout_constraintTop_toBottomOf="@id/txtFromAlamat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/lineadd1"
+                app:layout_constraintTop_toBottomOf="@id/layoutFrom"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="#eaeaea"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/lblInfoPembayaran"
+                android:text="Info Pembayaran"
+                style="@style/PaddingLine"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lineadd1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+            <View
+                android:id="@+id/line3"
+                app:layout_constraintTop_toBottomOf="@id/lblInfoPembayaran"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="#eaeaea"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:id="@+id/txtJmlBarang"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/line3"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/_9ssp"
+                style="@style/PaddingLineSmall"
+                android:text="Total Harga (10 Item)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtHarga"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/line3"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_9ssp"
+                android:text="0"
+                style="@style/PaddingLineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/lblBiaya"
+                app:layout_constraintTop_toBottomOf="@id/txtJmlBarang"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/_9ssp"
+                style="@style/PaddingLineSmall"
+                android:text="Biaya Admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtBiaya"
+                app:layout_constraintTop_toBottomOf="@id/txtHarga"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_9ssp"
+                style="@style/PaddingLineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/lblOngkir"
+                app:layout_constraintTop_toBottomOf="@id/txtBiaya"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/_9ssp"
+                style="@style/PaddingLineSmall"
+                android:text="@string/ongkir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtOngkir"
+                app:layout_constraintTop_toBottomOf="@id/txtBiaya"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_9ssp"
+                style="@style/PaddingLineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/lblTotalBayar"
+                app:layout_constraintTop_toBottomOf="@id/lblOngkir"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/_9ssp"
+                style="@style/PaddingLineSmall"
+                android:text="Total Bayar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtTotalBayar"
+                app:layout_constraintTop_toBottomOf="@id/txtOngkir"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                style="@style/PaddingLineSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutTipeBayar"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblTotalBayar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/line4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="#eaeaea"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:id="@+id/lblJenisBayar"
+                    app:layout_constraintTop_toBottomOf="@id/line4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="@dimen/_9ssp"
+                    style="@style/PaddingLineSmall"
+                    android:text="Jenis Pembayaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:id="@+id/txtJenisBayar"
+                    app:layout_constraintTop_toBottomOf="@id/line4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_9ssp"
+                    style="@style/PaddingLineSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/lblStatusBayar"
+                    app:layout_constraintTop_toBottomOf="@id/lblJenisBayar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="@dimen/_9ssp"
+                    style="@style/PaddingLineSmall"
+                    android:text="Status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txtStatusBayar"
+                    app:layout_constraintTop_toBottomOf="@id/txtJenisBayar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold"
+                    style="@style/PaddingLineSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtStatusBayar"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:visibility="gone"
+                        android:id="@+id/btnCekStatus"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:textAllCaps="false"
+                        android:textColor="@color/teal"
+                        android:text="Cek Status"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/btnDetailBayar"
+                        android:textAllCaps="false"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:text="Detail"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/line5"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/layoutTipeBayar"
+                android:background="#eaeaea"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:alpha="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3sdp" />
+
+            <TextView
+                android:id="@+id/lblDetailStatus"
+                android:text="Detail Status"
+                android:textStyle="bold"
+                style="@style/PaddingLine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerStatus"
+                app:layout_constraintTop_toBottomOf="@id/lblDetailStatus"
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progressStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblDetailStatus"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:visibility="gone"
+        android:id="@+id/layoutDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgClose"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_close"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            app:tint="#686868" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutCari"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgClose"
+            app:endIconDrawable="@drawable/ic_search"
+            app:endIconMode="custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCari"
+                android:lines="1"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCourier"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutCari"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

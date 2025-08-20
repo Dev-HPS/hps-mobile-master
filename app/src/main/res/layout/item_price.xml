@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/_5sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/lblUnit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Unit Produk"
+        android:textSize="@dimen/_10ssp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtUnitName"
+        android:text="Pcs"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lblUnit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtStok"
+        app:layout_constraintTop_toBottomOf="@id/txtUnitName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Jumlah 123"
+        android:textSize="@dimen/_10ssp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:background="@drawable/bg_rounded_amber"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtHarga"
+        android:text="Rp 2.500"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/red"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:background="#eaeaea"
+        android:alpha="0.5"
+        app:layout_constraintTop_toBottomOf="@id/txtStok"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

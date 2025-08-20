@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_15sdp" >
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:text="Konfirmasi Data"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_12ssp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@id/txtHeader"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnTidak"
+            android:text="@string/tidak"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnYa"
+            android:text="@string/ya"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:backgroundTint="@color/colorAccent"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

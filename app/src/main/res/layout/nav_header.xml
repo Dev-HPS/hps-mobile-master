@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtAppName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_18ssp"
+        android:text="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/line1"
+        android:background="#ebebeb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtAppName"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        app:srcCompat="@drawable/ic_account"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_8sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp" />
+
+    <TextView
+        android:id="@+id/txtNama"
+        android:layout_marginLeft="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="@id/imgProfile"
+        android:text="Maas Rahman"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/imgProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtPrivilage"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintTop_toBottomOf="@id/txtNama"
+        app:layout_constraintStart_toStartOf="@id/txtNama"
+        android:text="Developer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/line2"
+        android:background="#ebebeb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgProfile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

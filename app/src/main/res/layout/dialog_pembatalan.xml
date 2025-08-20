@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_16sdp" >
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:text="Alasan Pembatalan"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_12ssp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/layoutKeterangan"
+        android:layout_below="@id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etKeterangan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/layoutKeterangan"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSubmitBatal"
+            android:text="@string/batalkan"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:backgroundTint="@color/deep_orange"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_rounded_white"
+    android:theme="@style/AppTheme.TransparentOutside"
+    style="@style/AppTheme.TransparentOutside"
+    android:layout_margin="@dimen/_16sdp">
+    <TextView
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/bg_rounded_amber_top"
+        android:padding="@dimen/_8sdp"
+        android:id="@+id/headerSearchable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Header"/>
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:searchIcon="@drawable/ic_search"
+            android:paddingRight="24dp"
+            android:queryHint="Cari"
+            android:gravity="center" />
+        <ListView
+            android:id="@+id/listItems"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray50"
+            android:alpha="0.2"/>
+        <Button
+            android:id="@+id/btnTutup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:text="@string/tutup"
+            android:textSize="14sp" />
+</LinearLayout>

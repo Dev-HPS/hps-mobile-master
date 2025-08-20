@@ -1,0 +1,182 @@
+<resources>
+    <string-array name="status">
+        <item>Semua</item>
+        <item>Pemesanan Baru</item>
+        <item>Menunggu Proses Pembayaran</item>
+        <item>Proses Pengiriman Barang</item>
+        <item>Pemesanan Dibatalkan Oleh Sistem</item>
+    </string-array>
+    <string name="app_name">DMLT Sales Online</string>
+    <string name="ok">OK</string>
+    <string name="clock_in">ABSEN MASUK</string>
+    <string name="isLoggedIn">isLoggedIn</string>
+    <string name="userToken">userToken</string>
+    <string name="url">url</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="daftarsebagaimitra">Daftar Sebagai Mitra</string>
+    <string name="namawarung">Nama Warung/Toko</string>
+    <string name="notelphp">No. Telepon / HP</string>
+    <string name="email">Email</string>
+    <string name="namapemilik">Nama Pemilik</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="kotakab">Kota/Kabupaten</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="desakel">Desa/Kelurahan</string>
+    <string name="alamat">Alamat</string>
+    <string name="sayasetuju">Saya setuju dengan Syarat dan Ketentuan berlaku serta Kebijakan Privacy</string>
+    <string name="daftar">Daftar</string>
+    <string name="tidak">Tidak</string>
+    <string name="ya">Ya</string>
+    <string name="beranda">Beranda</string>
+    <string name="cariproduk">Cari Produk</string>
+    <string name="diskon">Diskon</string>
+    <string name="kategori">Kategori</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="keranjang">Keranjang</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="akun">Akun</string>
+    <string name="bayar">Bayar</string>
+    <string name="total">Total</string>
+    <string name="totalharga">Total Harga</string>
+    <string name="yakinmenghapusproduk">Yakin menghapus produk terpilih?</string>
+    <string name="profile">Profile</string>
+    <string name="poinanda">Poin Anda</string>
+    <string name="tukarpoin">Tukar Poin</string>
+    <string name="pemilik">Pemilik</string>
+    <string name="ubahprofile">Ubah Profile</string>
+    <string name="ubahpassword">Ubah Password</string>
+    <string name="produkdiskon">Produk Diskon</string>
+    <string name="carikategori">Cari Kategori</string>
+    <string name="detailproduk">Detail Produk</string>
+    <string name="daftarproduk">Daftar Produk</string>
+    <string name="loadmore">Tampilkan Lainnya</string>
+    <string name="beli">Beli</string>
+    <string name="tambahkekeranjang">Tambah ke Keranjang</string>
+    <string name="informasiproduk">Informasi Produk</string>
+    <string name="deskripsiproduk">Deskripsi Produk</string>
+    <string name="isianbelumlengkap">Isian belum lengkap</string>
+    <string name="totaltagihan">Total Tagihan</string>
+    <string name="detail">Detail</string>
+    <string name="metodepembayaran">Metode Pembayaran</string>
+    <string name="ringkasanpemesanan">Ringkasan Pemesanan</string>
+    <string name="pembayaran">Pembayaran</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="status">Status</string>
+    <string name="tampilkanpassword">Tampilkan Password</string>
+    <string name="ubah">Ubah</string>
+    <string name="yakinkeluar">Yakin keluar Akun?</string>
+    <string name="tanggalawal">Tanggal Awal</string>
+    <string name="tanggalakhir">Tanggal Akhir</string>
+    <string name="idpelanggan">ID Pelanggan</string>
+    <string name="usertidaktersedia">User tidak tersedia</string>
+    <string name="logout">Logout</string>
+    <string name="cari">Cari</string>
+    <string name="userData">userData</string>
+    <string name="sessiontelahhabis">Session telah habis, silahkan login kembali</string>
+    <string name="terjadikesalahansaatmemuatdata">Terjadi kesalahan saat memuat data, silahkan mencoba kembali</string>
+    <string name="currencySymbol">symbolCur</string>
+    <string name="pesan">Pesan</string>
+    <string name="daftarpembelian">Daftar Pembelian</string>
+    <string name="proses">Proses</string>
+    <string name="batalkan">Batalkan</string>
+    <string name="kirim">Kirim Barang</string>
+    <string name="pesanandiapprove">Pesanan akan diproses, Lanjutkan?</string>
+    <string name="belumadaprodukterpilih">Belum ada produk terpilih untuk diproses</string>
+    <string name="stokkurang">Jumlah pembelian tidak dapat melebihi jumlah stok</string>
+    <string name="jenispengiriman">Jenis Pengiriman</string>
+    <string name="submit">Submit</string>
+    <string name="simpan">Simpan</string>
+    <string name="batal">Batal</string>
+    <string name="datatidaktersedia">Data tidak tersedia</string>
+    <string name="jumlahitem">Jumlah Item</string>
+    <string name="penjualan">Penjualan</string>
+    <string name="orderbarang">Order Barang</string>
+    <string name="stokbarang">Stok Barang</string>
+    <string name="yakinmelanjutkan">Yakin data penjualan telah sesuai, Lanjutkan?</string>
+    <string name="produk">Produk</string>
+    <string name="default_notification_channel_id">dmlt_channel_message</string>
+    <string name="canvasser">Canvasser</string>
+    <string name="mitra">Mitra</string>
+    <string name="selesaikan">Selesaikan</string>
+    <string name="konfirmasi">Konfirmasi</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="konfirmasipengirimanbarang">Konfirmasi pengiriman barang?</string>
+    <string name="tutup">Tutup</string>
+    <string name="passwordlama">Password Lama</string>
+    <string name="passwordbaru">Password Baru</string>
+    <string name="ulangipassword">Ulangi Password Baru</string>
+    <string name="tolak">Tolak</string>
+    <string name="checkout">Checkout</string>
+    <string name="tambah">Tambah</string>
+    <string name="simpanqr">Simpan QR</string>
+    <string name="pencarianproduk">Pencarian Produk</string>
+    <string name="wajibdiisi">Wajib diisi</string>
+    <string name="nomorakun">Nomor Akun</string>
+    <string name="saldo">Saldo</string>
+    <string name="laporantrans">Laporan Transaksi</string>
+    <string name="mutasitransaksi">Mutasi Transaksi</string>
+    <string name="pengembalianberhasil">Pengembalian barang telah diajukan, mohon menunggu Konfirmasi LP untuk menyelesaikan Pengembalian</string>
+    <string name="pengembaliantelahberhasil">Pengembalian Produk dari Canvasser Berhasil</string>
+    <string name="tarikSaldo">Tarik Saldo</string>
+    <string name="daftarlp">Daftar LP</string>
+    <string name="kodepos">Kode POS</string>
+    <string name="nik">NIK No. KTP</string>
+    <string name="lokasi">Titik Lokasi</string>
+    <string name="google_maps_key">AIzaSyDPhLfz-VsorR05RQ5Hss41-RHiFn23-KM</string>
+    <string name="ambilgambar">Ambil Photo</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="cairkandanapadaaplikasi">Cairkan Saldo Mutasi pada Aplikasi?</string>
+    <string name="jenispembelianbelum">Jenis pembelian belum dipilih</string>
+    <string name="subtotal">Sub Total</string>
+    <string name="ongkir">Ongkos Kirim</string>
+    <string name="totalbayar">Total Bayar</string>
+    <string name="filtertanggal">Filter Tanggal</string>
+    <string name="rangetanggal">Range Tanggal</string>
+    <string name="reset">Reset</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+</resources>

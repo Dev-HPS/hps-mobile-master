@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_9sdp"
+    android:minWidth="@dimen/_180sdp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblInfoPembayaran"
+        android:text="Status Pembayaran"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblNoOrder"
+        android:text="No. Order"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblInfoPembayaran"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtNoOrder"
+        android:text=": No. Order"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/lblNoOrder"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblTanggal"
+        android:text="Tanggal"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblNoOrder"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtTanggal"
+        android:text=": No. Order"
+        android:textStyle="bold"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toTopOf="@id/lblTanggal"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblJumlah"
+        android:text="Jumlah Bayar"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblTanggal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtJumlah"
+        android:text=": No. Order"
+        android:textStyle="bold"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toTopOf="@id/lblJumlah"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblBiaya"
+        android:text="Biaya Admin"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblJumlah"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtBiayaAdm"
+        android:text=": No. Order"
+        android:textStyle="bold"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toTopOf="@id/lblBiaya"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblTotal"
+        android:text="Total Bayar"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblBiaya"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:text=": No. Order"
+        android:textStyle="bold"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toTopOf="@id/lblTotal"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblNoBayar"
+        android:text="No. Pembayaran"
+        android:visibility="gone"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtNoBayar"
+        android:visibility="gone"
+        android:text=": No. Order"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/lblNoBayar"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblStatus"
+        android:text="Status"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblNoBayar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        android:text=": No. Order"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/lblStatus"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblExpired"
+        android:text="Expired Date"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/lblStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtExpired"
+        android:text="28 Juli 2020 20:00"
+        app:layout_constraintTop_toBottomOf="@id/lblExpired"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/deep_orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnTutup"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintTop_toBottomOf="@id/txtExpired"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:text="Tutup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

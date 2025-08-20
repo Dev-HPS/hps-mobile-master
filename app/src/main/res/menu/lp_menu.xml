@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:title="Absen">
+            <menu>
+                <item android:id="@+id/absenMasuk" android:title="Absen Masuk" app:actionViewClass="android.widget.TextView" />
+                <item android:id="@+id/absenKeluar" android:title="Absen Keluar" app:actionViewClass="android.widget.TextView" />
+            </menu>
+        </item>
+    </group>
+    <item android:id="@+id/menuDashboard" android:title="@string/beranda" />
+    <group android:checkableBehavior="single">
+        <item android:title="Barang">
+            <menu>
+                <item android:id="@+id/navStok" android:title="Barang" />
+                <item android:id="@+id/navPengembalian" android:title="Pengembalian" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Laporan">
+            <menu>
+                <item android:id="@+id/navTransaksi" android:title="Transaksi" />
+                <item android:id="@+id/navMutasi" android:visible="false" android:title="Mutasi" />
+<!--                <item android:id="@+id/navWarung" android:title="Mitra" android:visible="false" />-->
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="User">
+            <menu>
+                <item android:id="@+id/navProfile" android:title="Profile" />
+                <item android:id="@+id/navLogout" android:title="Logout" />
+            </menu>
+        </item>
+    </group>
+</menu>

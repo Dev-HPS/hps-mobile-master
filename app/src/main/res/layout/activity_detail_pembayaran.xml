@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:padding="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtSegera"
+                android:text="Segera selesaikan pembayaran sebelum"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/_12ssp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtCountDown"
+                android:textColor="@color/deep_orange"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSegera"
+                android:text="59 Menit : 59 Detik"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtKeterangan"
+                android:text="Jika dalam tenggang waktu belum dibayarkan,\nmaka akan dibayarkan secara tunai"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCountDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/txtKeterangan"
+                android:text="Jumlah Tagihan"
+                android:gravity="center"
+                android:id="@+id/lblTagihan"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/lblTagihan"
+                android:text="Rp 1.200.000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/red"
+                android:gravity="center"
+                android:id="@+id/txtTagihan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutQris"
+                android:background="@drawable/bg_rounded_gray"
+                android:padding="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTagihan"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logoQris"
+                    android:src="@drawable/logo_qris"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp" />
+
+                <ImageView
+                    android:id="@+id/imgQR"
+                    app:layout_constraintTop_toBottomOf="@id/logoQris"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp" />
+
+                <Button
+                    android:id="@+id/btnSimpan"
+                    android:backgroundTint="@color/green"
+                    android:text="@string/simpanqr"
+                    app:layout_constraintTop_toBottomOf="@id/imgQR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/qrisKeterangan"
+                    android:gravity="center"
+                    android:text="Scan QR Code atau Simpan untuk dapat melakukan pembayaran melalui E-Wallet di bawah ini"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSimpan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:id="@+id/sponsorSec"
+                    app:layout_constraintTop_toBottomOf="@id/qrisKeterangan"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:src="@drawable/logo_ovo"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_15sdp" />
+
+                    <ImageView
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/logo_link"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_28sdp" />
+
+                    <ImageView
+                        android:src="@drawable/logo_dana"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp" />
+
+                    <ImageView
+                        android:src="@drawable/logo_sakuku"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_23sdp" />
+
+                    <ImageView
+                        android:src="@drawable/logo_gopay"
+                        android:scaleType="fitCenter"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/danlainnya"
+                    android:gravity="center"
+                    android:text="dan aplikasi lain yang mendukung QRIS"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sponsorSec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutKode"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_rounded_gray"
+                app:layout_constraintTop_toBottomOf="@id/txtTagihan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lblKode"
+                    android:text="KODE PEMBAYARAN"
+                    android:gravity="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txtKode"
+                    android:text="083820055428"
+                    android:gravity="center"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblKode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/btnCopy"
+                    app:srcCompat="@drawable/ic_content_copy"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

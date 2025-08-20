@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingRight="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text="Tipe Pembayaran"
+        android:textColor="#000"
+        android:id="@+id/txtTitle"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

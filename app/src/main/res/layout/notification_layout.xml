@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@android:style/Widget.ActionButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/hotlist_bell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:contentDescription="Notification Icon"
+        android:gravity="center"
+        app:srcCompat="@drawable/ic_notifications" />
+
+    <ImageView
+        android:id="@+id/pointer"
+        app:srcCompat="@drawable/ic_pointer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/hotlist_bell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginRight="0dp" />
+
+    <TextView
+        android:id="@+id/txtCount"
+        app:layout_constraintTop_toTopOf="@id/pointer"
+        app:layout_constraintStart_toStartOf="@id/pointer"
+        app:layout_constraintBottom_toBottomOf="@id/pointer"
+        app:layout_constraintEnd_toEndOf="@id/pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTint="@color/red"
+        android:gravity="center"
+        android:minWidth="17sp"
+        android:text="9+"
+        android:textColor="#ffffffff"
+        android:textSize="9sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

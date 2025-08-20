@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxBackgroundColor="@android:color/transparent"
+                android:hint="@string/namawarung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNama"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxBackgroundColor="@android:color/transparent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/notelphp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNoTelp"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxBackgroundColor="@android:color/transparent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/namapemilik"
+                app:boxBackgroundColor="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNamaPemilik"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/nik"
+                app:boxBackgroundColor="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNIK"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/infoAlamat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text="Informasi Alamat"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:drawableLeftCompat="@drawable/ic_pointer" />
+
+                <View
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:background="@color/dark"
+                    android:alpha="0.6"
+                    app:layout_constraintStart_toEndOf="@id/infoAlamat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/infoAlamat"
+                    app:layout_constraintBottom_toBottomOf="@id/infoAlamat"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_4sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:endIconDrawable="@drawable/ic_arrow_right"
+                app:endIconMode="custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hastaprimasolusi.rana.utils.customui.CustomSearchAble
+                    android:id="@+id/etProvinsi"
+                    android:hint="@string/provinsi"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:endIconDrawable="@drawable/ic_arrow_right"
+                app:endIconMode="custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hastaprimasolusi.rana.utils.customui.CustomSearchAble
+                    android:id="@+id/etKotaKab"
+                    android:hint="@string/kotakab"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:endIconDrawable="@drawable/ic_arrow_right"
+                app:endIconMode="custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hastaprimasolusi.rana.utils.customui.CustomSearchAble
+                    android:id="@+id/etKecamatan"
+                    android:hint="@string/kecamatan"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:endIconDrawable="@drawable/ic_arrow_right"
+                app:endIconMode="custom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hastaprimasolusi.rana.utils.customui.CustomSearchAble
+                    android:id="@+id/etDesaKel"
+                    android:hint="@string/desakel"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/alamat"
+                app:boxBackgroundColor="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAlamat"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/kodepos"
+                app:boxBackgroundColor="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etKodePos"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/infoGeo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text="Geo Location"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:drawableLeftCompat="@drawable/ic_pointer" />
+
+                <View
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:background="@color/dark"
+                    android:alpha="0.6"
+                    app:layout_constraintStart_toEndOf="@id/infoGeo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/infoGeo"
+                    app:layout_constraintBottom_toBottomOf="@id/infoGeo"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_4sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--<fragment
+
+                android:layout_marginTop="@dimen/_8sdp"
+                android:id="@+id/autocomplete_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />-->
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:id="@+id/btnManual"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Cari Manual"
+                    android:textAllCaps="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="@string/lokasi"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_toLeftOf="@id/btnManual"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLokasi"
+                        android:maxLines="1"
+                        android:textSize="@dimen/_8ssp"
+                        android:focusable="false"
+                        android:editable="false"
+                        android:lines="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/infoUpload"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:text="Upload Foto pemilik dengan Lokasi Usaha"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:drawableLeftCompat="@drawable/ic_pointer" />
+
+                <View
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:background="@color/dark"
+                    android:alpha="0.6"
+                    app:layout_constraintStart_toEndOf="@id/infoUpload"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/infoUpload"
+                    app:layout_constraintBottom_toBottomOf="@id/infoUpload"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_4sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutLokasi"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgRefresh"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_close"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    app:tint="@color/red" />
+
+                <ImageView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/imgLokasi"
+                    android:scaleType="fitCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/addImage"
+                android:src="@drawable/ic_add_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp" />
+
+        <CheckBox
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/cbSetuju"
+            android:text="@string/sayasetuju"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginTop="@dimen/_20sdp"
+            android:backgroundTint="@color/colorAccent"
+            android:id="@+id/btnDaftar"
+            android:text="@string/daftar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:clickable="false"
+        android:id="@+id/layoutMaps"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFab"
+            app:layout_constraintBottom_toBottomOf="@id/map"
+            app:layout_constraintLeft_toLeftOf="@id/map"
+            app:layout_constraintRight_toRightOf="@id/map"
+            android:layout_margin="@dimen/_8sdp"
+            android:tint="@color/black"
+            app:srcCompat="@drawable/ic_close"
+            app:backgroundTint="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

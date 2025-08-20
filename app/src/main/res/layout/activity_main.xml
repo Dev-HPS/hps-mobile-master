@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_height="?actionBarSize">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/txtTitle"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:text="@string/app_name"
+                android:textSize="@dimen/_14ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/imgNotif"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:srcCompat="@drawable/ic_notifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/pointer"
+                app:srcCompat="@drawable/ic_pointer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/imgNotif"
+                app:layout_constraintBottom_toBottomOf="@id/imgNotif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_marginRight="0dp" />
+
+            <TextView
+                android:id="@+id/txtCount"
+                app:layout_constraintTop_toTopOf="@id/pointer"
+                app:layout_constraintStart_toStartOf="@id/pointer"
+                app:layout_constraintBottom_toBottomOf="@id/pointer"
+                app:layout_constraintEnd_toEndOf="@id/pointer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/red"
+                android:gravity="center"
+                android:minWidth="17sp"
+                android:text="9+"
+                android:textColor="#ffffffff"
+                android:textSize="9sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        app:menu="@menu/bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

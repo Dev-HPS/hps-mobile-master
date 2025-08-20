@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+<<<<<<< HEAD
+=======
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_canvas_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_daftar_mitra_canvas.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_jmlbarang.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_akun.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_canvas_cart.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_canvas_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_canvas_pelanggan.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_daftar_mitra.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_daftar_mitra_canvas.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_daftar_produk_cnvs.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_detail_riwayat.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_list_toko.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_order_canvas.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_order_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_riwayat_detail_cnvs.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_trans_report_param.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_detail_produk_lp.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_report.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_toko.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/canvas_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/lp_menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+>>>>>>> origin/dso-new
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

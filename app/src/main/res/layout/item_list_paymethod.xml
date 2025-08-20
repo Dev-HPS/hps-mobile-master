@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imgTipeBayar"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:src="@drawable/logo_brisyariah"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_30sdp" />
+
+    <TextView
+        android:id="@+id/txtTipeBayar"
+        android:layout_marginLeft="@dimen/_8sdp"
+        app:layout_constraintStart_toEndOf="@id/imgTipeBayar"
+        app:layout_constraintTop_toTopOf="@id/imgTipeBayar"
+        app:layout_constraintBottom_toBottomOf="@id/imgTipeBayar"
+        android:text="BRI Syariah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/arrowRight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgTipeBayar"
+        app:layout_constraintBottom_toBottomOf="@id/imgTipeBayar"
+        app:srcCompat="@drawable/ic_arrow_right"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        app:tint="#686868" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:paddingTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/imgProduk"
+            android:src="@drawable/contoh_produk"
+            android:scaleType="fitCenter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDetail"
+            android:padding="@dimen/_10sdp"
+            android:background="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgProduk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtHarga"
+                android:text="Rp 20.000"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtStok"
+                android:text="Stok 20 Pcs"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="italic"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtNamaProduk"
+                android:text="Obat Nyamuk Cap Kingkong"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/txtHarga"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtKategori"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNamaProduk"
+                android:text="Obat Kimia"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutBeli"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btnBeli"
+                android:background="@color/colorPrimary"
+                android:text="@string/beli"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/btnAdd"
+                app:layout_constraintTop_toTopOf="@id/btnBeli"
+                app:layout_constraintBottom_toBottomOf="@id/btnBeli"
+                app:layout_constraintEnd_toStartOf="@id/btnBeli"
+                app:srcCompat="@drawable/ic_add"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:scaleType="fitCenter"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="0dp"
+                app:tint="#686868" />
+
+            <ImageView
+                android:id="@+id/btnDel"
+                app:layout_constraintTop_toTopOf="@id/btnBeli"
+                app:layout_constraintBottom_toBottomOf="@id/btnBeli"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_remove"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:scaleType="fitCenter"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="0dp"
+                app:tint="#686868" />
+
+            <EditText
+                android:id="@+id/etJumlah2"
+                app:layout_constraintStart_toEndOf="@id/btnDel"
+                app:layout_constraintEnd_toStartOf="@id/btnAdd"
+                app:layout_constraintTop_toTopOf="@id/btnAdd"
+                app:layout_constraintBottom_toBottomOf="@id/btnAdd"
+                android:background="#fff"
+                android:text="1"
+                android:inputType="phone"
+                android:textSize="@dimen/_12ssp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+            <View
+                app:layout_constraintTop_toBottomOf="@id/etJumlah2"
+                android:background="#eaeaea"
+                android:alpha="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txtJenis"
+            app:layout_constraintTop_toBottomOf="@id/layoutBeli"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:text="Jenis Pembelian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <HorizontalScrollView
+            android:id="@+id/layoutJenis"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/txtJenis"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:chipSpacingHorizontal="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleLine="true">
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <View
+            app:layout_constraintTop_toBottomOf="@id/layoutJenis"
+            android:background="#eaeaea"
+            android:alpha="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/layoutJenis"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:id="@+id/lblInfoProduk"
+            android:text="@string/deskripsiproduk"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtDeskripsi"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="deskripsi desk deskripsi desk deskripsi desk deskripsi desk deskripsi desk deskripsi desk deskripsi desk deskripsi desk deskripsi desk"
+            app:layout_constraintTop_toBottomOf="@id/lblInfoProduk"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/line"
+            android:background="#eaeaea"
+            app:layout_constraintTop_toBottomOf="@id/txtDeskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

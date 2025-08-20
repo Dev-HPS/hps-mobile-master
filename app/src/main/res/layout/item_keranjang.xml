@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutContent"
+        android:padding="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgProduk"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp" />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtNamaProduk"
+            android:textSize="@dimen/_10ssp"
+            android:text="Obat Nyamuk Cap Kingkong"
+            android:layout_marginLeft="@dimen/_8sdp"
+            app:layout_constraintStart_toEndOf="@id/imgProduk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtHarga"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold"
+            android:textColor="@color/deep_orange"
+            app:layout_constraintTop_toBottomOf="@id/txtNamaProduk"
+            app:layout_constraintStart_toStartOf="@id/txtNamaProduk"
+            android:text="Rp 50.000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="@dimen/_8sdp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_add"
+            app:startIconDrawable="@drawable/ic_remove"
+            app:layout_constraintTop_toBottomOf="@id/txtNamaProduk"
+            android:id="@+id/layoutJumlah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etJumlah"
+                android:text="1"
+                android:textSize="@dimen/_10ssp"
+                android:focusable="false"
+                android:paddingVertical="@dimen/_3sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:editable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/imgDelete"
+            android:layout_marginRight="@dimen/_15sdp"
+            app:srcCompat="@drawable/ic_delete"
+            app:layout_constraintEnd_toStartOf="@id/layoutJumlah"
+            app:layout_constraintTop_toTopOf="@id/layoutJumlah"
+            app:layout_constraintBottom_toBottomOf="@id/layoutJumlah"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="0dp"
+            app:tint="#686868" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutContent"
+        android:background="#ededed"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_5sdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

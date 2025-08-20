@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_10sdp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lblJenisBeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jenis Pembelian"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:id="@+id/layoutJenis"
+        android:layout_below="@id/lblJenisBeli"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:chipSpacingHorizontal="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleLine="true">
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/lblHarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutJenis"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:layout_toLeftOf="@id/txtHarga"
+        android:text="Harga (-)"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutJenis"
+        android:layout_alignParentEnd="true"
+        android:text="Rp -"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtStokDialog"
+        android:layout_below="@id/lblHarga"
+        android:text="Stok -"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutJumlah"
+        android:layout_below="@id/txtStokDialog"
+        android:layout_marginTop="@dimen/_10sdp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etJumlah"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:hint="Jumlah Pesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@id/layoutJumlah"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnBatal"
+            android:text="@string/batal"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSimpan"
+            android:text="@string/simpan"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:backgroundTint="@color/colorAccent"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

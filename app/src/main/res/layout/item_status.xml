@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/txtTanggal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="28 Juli 2020 10:20"
+        android:textColor="#686868"
+        android:textSize="@dimen/_9ssp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingRight="@dimen/_16sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtStatus"
+        app:layout_constraintTop_toBottomOf="@id/txtTanggal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingLeft="@dimen/_30sdp"
+        android:textColor="#686868"
+        android:textSize="@dimen/_9ssp"
+        android:paddingRight="@dimen/_16sdp"
+        android:text="Pesanan Baru"
+        android:paddingBottom="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgDot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtTanggal"
+        app:srcCompat="@drawable/ic_dot"
+        android:paddingTop="@dimen/_3sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        app:tint="@color/dark" />
+
+    <View
+        android:id="@+id/viewLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/imgDot"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:background="@color/dark"
+        app:layout_constraintTop_toBottomOf="@id/imgDot"
+        app:layout_constraintBottom_toBottomOf="@id/txtStatus"
+        android:layout_width="@dimen/_2sdp"
+        android:layout_height="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
