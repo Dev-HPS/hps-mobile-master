@@ -270,6 +270,9 @@ interface ApiService {
     @GET("toko")
     fun getListTokoAsync(@Query("latitude") lat: String, @Query("longitude") long: String): Deferred<ListTokoResponse>
 
+    @GET("toko")
+    fun getAllTokoAsync(): Deferred<ListTokoResponse>
+
     @POST("toko")
     fun registerTokoAsync(@Body registerRequest: RegisterRequest): Deferred<LoginResponse>
 }

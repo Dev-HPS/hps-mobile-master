@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -28,9 +29,13 @@ import org.koin.android.ext.android.inject
 class ListTokoFragment: Fragment() {
     private val viewModel: CanvasViewModel by inject()
     private val prog = ProgDialog().getInstance()
-    private lateinit var adapter: ListTokoAdapter
-    private var tmpData = mutableListOf<ListTokoModel>()
+    private lateinit var nearbyAdapter: ListTokoAdapter
+    private lateinit var allTokoAdapter: ListTokoAdapter
+    private var allTokoData = mutableListOf<ListTokoModel>()
+    private var nearbyTokoData = mutableListOf<ListTokoModel>()
+    private var currentSearchData = mutableListOf<ListTokoModel>()
     private lateinit var locationHelper: LocationHelper
+    private var isNearbyMode = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +48,9 @@ class ListTokoFragment: Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         locationHelper = LocationHelper(requireActivity())
-        adapter = ListTokoAdapter { toko ->
+
+        // Adapter untuk nearby toko (bisa diklik)
+        nearbyAdapter = ListTokoAdapter { toko ->
             showalertConfirmation(requireContext(), "Konfirmasi pemilihan mitra ${toko.nAME}, lanjutkan?"){
                 viewModel.selectedTokoJual = toko
                 requireActivity().supportFragmentManager.beginTransaction()
@@ -52,9 +59,17 @@ class ListTokoFragment: Fragment() {
                     .commit()
             }
         }
+
+        // Adapter untuk all toko (tidak bisa diklik)
+        allTokoAdapter = ListTokoAdapter { toko ->
+            Toast.makeText(requireContext(), "Toko ${toko.nAME} tidak bisa dipilih. Pilih mode 'Nearby Toko' untuk melakukan penjualan.", Toast.LENGTH_LONG).show()
+        }
+
         recyclerToko.layoutManager = LinearLayoutManager(activity)
         recyclerToko.itemAnimator = DefaultItemAnimator()
-        recyclerToko.adapter = adapter
+
+        // Set default adapter (All Toko)
+        recyclerToko.adapter = allTokoAdapter
 
         btnTambah.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
@@ -62,6 +77,27 @@ class ListTokoFragment: Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        // Setup radio group listener
+        radioGroupTokoType.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radioAllToko -> {
+                    isNearbyMode = false
+                    recyclerToko.adapter = allTokoAdapter
+                    currentSearchData = allTokoData
+                    allTokoAdapter.updateData(allTokoData)
+                    etSearch.setText("")
+                }
+                R.id.radioNearbyToko -> {
+                    isNearbyMode = true
+                    recyclerToko.adapter = nearbyAdapter
+                    currentSearchData = nearbyTokoData
+                    nearbyAdapter.updateData(nearbyTokoData)
+                    etSearch.setText("")
+                }
+            }
+        }
+
         initViewModel()
     }
 
@@ -76,8 +112,12 @@ class ListTokoFragment: Fragment() {
 
         viewModel.listToko.observe(viewLifecycleOwner, Observer {
             if(it == null) return@Observer
-            tmpData = it.toMutableList()
-            adapter.updateData(tmpData)
+            nearbyTokoData = it.toMutableList()
+            currentSearchData = if (isNearbyMode) nearbyTokoData else allTokoData
+
+            if (isNearbyMode) {
+                nearbyAdapter.updateData(nearbyTokoData)
+            }
         })
 
         etSearch.addTextChangedListener(object: TextWatcher{
@@ -91,18 +131,28 @@ class ListTokoFragment: Fragment() {
 
             override fun afterTextChanged(p0: Editable?) {
                 if(p0.toString().isEmpty()){
-                    adapter.updateData(tmpData)
+                    if (isNearbyMode) {
+                        nearbyAdapter.updateData(nearbyTokoData)
+                    } else {
+                        allTokoAdapter.updateData(allTokoData)
+                    }
                 }else if(p0.toString().length >= 3){
                     val listData = mutableListOf<ListTokoModel>()
-                    tmpData.forEach { toko ->
+                    currentSearchData.forEach { toko ->
                         if(toko.nAME?.toLowerCase()?.contains(p0.toString().toLowerCase()) == true){
                             listData.add(toko)
                         }
                     }
-                    adapter.updateData(listData)
+                    if (isNearbyMode) {
+                        nearbyAdapter.updateData(listData)
+                    } else {
+                        allTokoAdapter.updateData(listData)
+                    }
                 }
             }
         })
+
+        loadAllTokoData()
 
         if(viewModel.listToko.value.isNullOrEmpty()){
             locationHelper.getLastKnownLocation { location ->
@@ -118,18 +168,17 @@ class ListTokoFragment: Fragment() {
                     Toast.makeText(requireContext(), "Location not found", Toast.LENGTH_SHORT).show()
                     viewModel.getListToko()
                 }
+            }
+        }
+    }
 
-//                showalertConfirmation(activity!!, getString(R.string.yakinmelanjutkan)) {
-////                startActivityForResult(Intent(activity!!, QrScanActivity::class.java), 888)
-//
-//                    if (viewModel.userModel?.rOLENAME == "spg" || viewModel.userModel?.rOLENAME == "msr") {
-//                        formSpg.visibility = View.VISIBLE
-//                    } else {
-//                        viewModel.confirmPos(viewModel.selectedTokoJual?.iD.toString()) {
-//                            jualBerhasil()
-//                        }
-//                    }
-//                }
+    private fun loadAllTokoData() {
+        viewModel.getAllTokoWithoutLocation { allToko ->
+            allTokoData = allToko.toMutableList()
+            currentSearchData = if (isNearbyMode) nearbyTokoData else allTokoData
+
+            if (!isNearbyMode) {
+                allTokoAdapter.updateData(allTokoData)
             }
         }
     }

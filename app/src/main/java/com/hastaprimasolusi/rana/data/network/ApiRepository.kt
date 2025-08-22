@@ -155,6 +155,7 @@ interface ApiRepository {
     suspend fun konfirmasiKembaliBarang(): ResultData<ProdukListResponse>
     suspend fun pencairanDana(): ResultData<ProdukListResponse>
     suspend fun getListToko(latitude: String,longitude: String): ResultData<ListTokoResponse>
+    suspend fun getAllToko(): ResultData<ListTokoResponse>
     suspend fun daftarToko(registerRequest: RegisterRequest): ResultData<LoginResponse>
 }
 
@@ -757,6 +758,15 @@ class ApiRepositoryImpl(private val apiService: ApiService) : ApiRepository {
     override suspend fun daftarToko(registerRequest: RegisterRequest): ResultData<LoginResponse> {
         return try {
             val result = apiService.registerTokoAsync(registerRequest).await()
+            ResultData.Success(result)
+        } catch (ex: Exception) {
+            ResultData.Error(ex)
+        }
+    }
+
+    override suspend fun getAllToko(): ResultData<ListTokoResponse> {
+        return try {
+            val result = apiService.getAllTokoAsync().await()
             ResultData.Success(result)
         } catch (ex: Exception) {
             ResultData.Error(ex)

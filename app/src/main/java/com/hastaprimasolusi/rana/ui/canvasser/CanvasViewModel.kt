@@ -1430,6 +1430,32 @@ class CanvasViewModel(val apiRepository: ApiRepository, private val dbRepository
         }
     }
 
+    fun getAllTokoWithoutLocation(callback: (List<ListTokoModel>) -> Unit) {
+        loadingToko.postValue(true)
+        launch {
+            val result = withContext(Dispatchers.IO) { apiRepository.getAllToko() }
+            loadingToko.postValue(false)
+            when (result) {
+                is ResultData.Success -> {
+                    val response = result.data
+                    when (response.rC) {
+                        "0000" -> {
+                            callback(response.dATA ?: emptyList())
+                        }
+
+                        "0001" -> isUnAuthorized.postValue(true)
+                        else -> showError.postValue(response.rCM.toString())
+                    }
+                }
+
+                is ResultData.Error -> {
+                    showError.postValue(result.exception.message)
+                    callback(emptyList())
+                }
+            }
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         job.cancel()
