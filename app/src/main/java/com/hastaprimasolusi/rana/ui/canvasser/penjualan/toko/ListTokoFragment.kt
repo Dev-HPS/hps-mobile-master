@@ -1,5 +1,8 @@
 package com.hastaprimasolusi.rana.ui.canvasser.penjualan.toko
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -20,6 +23,9 @@ import com.hastaprimasolusi.rana.ui.canvasser.CanvasViewModel
 import com.hastaprimasolusi.rana.ui.canvasser.penjualan.CanvasPenjualanFragment
 import com.hastaprimasolusi.rana.ui.common.ProgDialog
 import com.hastaprimasolusi.rana.utils.showalertConfirmation
+import com.hastaprimasolusi.rana.utils.showalertInformation
+import com.hastaprimasolusi.rana.utils.showalertThreeButtons
+import com.hastaprimasolusi.rana.utils.showalertTwoButtons
 import kotlinx.android.synthetic.main.fragment_list_toko.*
 import org.koin.android.ext.android.inject
 
@@ -51,18 +57,148 @@ class ListTokoFragment: Fragment() {
 
         // Adapter untuk nearby toko (bisa diklik)
         nearbyAdapter = ListTokoAdapter { toko ->
-            showalertConfirmation(requireContext(), "Konfirmasi pemilihan mitra ${toko.nAME}, lanjutkan?"){
-                viewModel.selectedTokoJual = toko
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.frame, CanvasPenjualanFragment())
-                    .addToBackStack(null)
-                    .commit()
-            }
+//            showalertConfirmation(requireContext(), "Konfirmasi pemilihan mitra ${toko.nAME}, lanjutkan?"){
+//                viewModel.selectedTokoJual = toko
+//                requireActivity().supportFragmentManager.beginTransaction()
+//                    .replace(R.id.frame, CanvasPenjualanFragment())
+//                    .addToBackStack(null)
+//                    .commit()
+//            }
+            showalertTwoButtons(
+                context = requireContext(),
+                message = "Pilih tindakan untuk toko ${toko.nAME}:",
+                positiveText = "Lanjutkan Penjualan",
+                neutralText = "Buka Maps",
+                positiveListener = {
+                    // Langsung ke penjualan
+                    showalertConfirmation(requireContext(), "Konfirmasi pemilihan mitra ${toko.nAME}, lanjutkan?") {
+                        viewModel.selectedTokoJual = toko
+                        requireActivity().supportFragmentManager.beginTransaction()
+                            .replace(R.id.frame, CanvasPenjualanFragment())
+                            .addToBackStack(null)
+                            .commit()
+                    }
+                },
+                neutralListener = {
+                    // Buka Google Maps
+//                    val latitude = toko.lATITUDE?.toDoubleOrNull()
+//                    val longitude = toko.lONGITUDE?.toDoubleOrNull()
+//
+//                    if (latitude != null && longitude != null) {
+//                        val uri = "google.navigation:q=${latitude},${longitude}&mode=d"
+//                        val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+//                        mapIntent.setPackage("com.google.android.apps.maps")
+//
+//                        try {
+//                            startActivity(mapIntent)
+//                        } catch (e: ActivityNotFoundException) {
+//                            // Fallback jika Google Maps tidak tersedia
+//                            val browserIntent = Intent(Intent.ACTION_VIEW,
+//                                Uri.parse("https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}"))
+//                            startActivity(browserIntent)
+//                        }
+//                    } else {
+//                        Toast.makeText(requireContext(), "Koordinat toko tidak tersedia", Toast.LENGTH_SHORT).show()
+//                    }
+                    val latitude = toko.lATITUDE?.toDoubleOrNull()
+                    val longitude = toko.lONGITUDE?.toDoubleOrNull()
+
+                    if (latitude != null && longitude != null) {
+                        // URI untuk menampilkan lokasi dengan preview (tidak langsung navigasi)
+                        val uri = "geo:${latitude},${longitude}?q=${latitude},${longitude}(${toko.nAME})"
+                        val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                        mapIntent.setPackage("com.google.android.apps.maps")
+
+                        try {
+                            startActivity(mapIntent)
+                        } catch (e: ActivityNotFoundException) {
+                            val browserIntent = Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}"))
+                            startActivity(browserIntent)
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), "Koordinat toko tidak tersedia", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            )
         }
 
         // Adapter untuk all toko (tidak bisa diklik)
         allTokoAdapter = ListTokoAdapter { toko ->
-            Toast.makeText(requireContext(), "Toko ${toko.nAME} tidak bisa dipilih. Pilih mode 'Nearby Toko' untuk melakukan penjualan.", Toast.LENGTH_LONG).show()
+//            Toast.makeText(requireContext(), "Toko ${toko.nAME} tidak bisa dipilih. Pilih mode 'Nearby Toko' untuk melakukan penjualan.", Toast.LENGTH_LONG).show()
+//            showalertInformation(requireContext(), "Toko ${toko.nAME} berada diluar jangkauan anda. Silakan pilih mode 'Nearby Toko' untuk melakukan penjualan.") {
+//                radioGroupTokoType.check(R.id.radioNearbyToko)
+//            }
+//            showalertConfirmation(requireContext(), "Konfirmasi pemilihan mitra ${toko.nAME}, lanjutkan?"){
+//                viewModel.selectedTokoJual = toko
+//                requireActivity().supportFragmentManager.beginTransaction()
+//                    .replace(R.id.frame, CanvasPenjualanFragment())
+//                    .addToBackStack(null)
+//                    .commit()
+//            }
+            showalertThreeButtons(
+                context = requireContext(),
+                message = "Toko ${toko.nAME} berada di luar jangkauan lokasi Anda. Pilih tindakan yang ingin dilakukan:",
+                positiveText = "Lihat Toko Terdekat",
+                neutralText = "Buka Maps",
+                negativeText = "Lanjutkan Penjualan",
+                positiveListener = {
+                    // Action untuk Ok (Pindah ke mode nearby toko)
+                    radioGroupTokoType.check(R.id.radioNearbyToko)
+                    Toast.makeText(requireContext(), "Beralih ke mode Toko Terdekat", Toast.LENGTH_SHORT).show()
+                },
+                neutralListener = {
+                    // Action untuk mengarahkan ke maps aplikasi google maps dengan koordinat lat long toko
+//                    val latitude = toko.lATITUDE?.toDoubleOrNull()
+//                    val longitude = toko.lONGITUDE?.toDoubleOrNull()
+//
+//                    if (latitude != null && longitude != null) {
+//                        val uri = "google.navigation:q=${latitude},${longitude}&mode=d"
+//                        val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+//                        mapIntent.setPackage("com.google.android.apps.maps")
+//
+//                        try {
+//                            startActivity(mapIntent)
+//                        } catch (e: ActivityNotFoundException) {
+//                            // Fallback jika Google Maps tidak tersedia
+//                            val browserIntent = Intent(Intent.ACTION_VIEW,
+//                                Uri.parse("https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}"))
+//                            startActivity(browserIntent)
+//                        }
+//                    } else {
+//                        Toast.makeText(requireContext(), "Koordinat toko tidak tersedia", Toast.LENGTH_SHORT).show()
+//                    }
+                    val latitude = toko.lATITUDE?.toDoubleOrNull()
+                    val longitude = toko.lONGITUDE?.toDoubleOrNull()
+
+                    if (latitude != null && longitude != null) {
+                        // URI untuk menampilkan lokasi dengan preview (tidak langsung navigasi)
+                        val uri = "geo:${latitude},${longitude}?q=${latitude},${longitude}(${toko.nAME})"
+                        val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+                        mapIntent.setPackage("com.google.android.apps.maps")
+
+                        try {
+                            startActivity(mapIntent)
+                        } catch (e: ActivityNotFoundException) {
+                            val browserIntent = Intent(Intent.ACTION_VIEW,
+                                Uri.parse("https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}"))
+                            startActivity(browserIntent)
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), "Koordinat toko tidak tersedia", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                negativeListener = {
+                    // Action untuk lanjutkan ke penjualan (bypass jarak)
+                    showalertConfirmation(requireContext(), "Konfirmasi pemilihan mitra ${toko.nAME}. Anda akan melanjutkan penjualan meskipun berada di luar jangkauan. Lanjutkan?") {
+                        viewModel.selectedTokoJual = toko
+                        requireActivity().supportFragmentManager.beginTransaction()
+                            .replace(R.id.frame, CanvasPenjualanFragment())
+                            .addToBackStack(null)
+                            .commit()
+                    }
+                }
+            )
         }
 
         recyclerToko.layoutManager = LinearLayoutManager(activity)

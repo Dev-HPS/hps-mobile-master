@@ -128,6 +128,85 @@ fun showalertInformation(context: Context, errorString: String, listener:() -> U
     }
 }
 
+fun showalertTwoButtons(
+    context: Context,
+    message: String,
+    positiveText: String = "Ya",
+    neutralText: String = "Tidak",
+    positiveListener: () -> Unit = {},
+    neutralListener: () -> Unit = {}
+) {
+    val alertDialog = AlertDialog.Builder(context)
+        .setMessage(message)
+        .setPositiveButton(positiveText) { dialog, _ ->
+            positiveListener()
+            dialog.dismiss()
+        }
+        .setNegativeButton(neutralText) { dialog, _ ->
+            neutralListener()
+            dialog.dismiss()
+        }
+        .create()
+
+    alertDialog.show()
+
+    // Styling tombol
+    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)?.let {
+        it.setBackgroundColor(Color.TRANSPARENT)
+        it.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
+    }
+
+    alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.let {
+        it.setBackgroundColor(Color.TRANSPARENT)
+        it.setTextColor(ContextCompat.getColor(context, R.color.colorAccent))
+    }
+}
+
+fun showalertThreeButtons(
+    context: Context,
+    message: String,
+    positiveText: String = "Ya",
+    neutralText: String = "Mungkin",
+    negativeText: String = "Tidak",
+    positiveListener: () -> Unit = {},
+    neutralListener: () -> Unit = {},
+    negativeListener: () -> Unit = {}
+) {
+    val alertDialog = AlertDialog.Builder(context)
+        .setMessage(message)
+        .setPositiveButton(positiveText) { dialog, _ ->
+            positiveListener()
+            dialog.dismiss()
+        }
+        .setNeutralButton(neutralText) { dialog, _ ->
+            neutralListener()
+            dialog.dismiss()
+        }
+        .setNegativeButton(negativeText) { dialog, _ ->
+            negativeListener()
+            dialog.dismiss()
+        }
+        .create()
+
+    alertDialog.show()
+
+    // Styling tombol
+    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE)?.let {
+        it.setBackgroundColor(Color.TRANSPARENT)
+        it.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
+    }
+
+    alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL)?.let {
+        it.setBackgroundColor(Color.TRANSPARENT)
+        it.setTextColor(ContextCompat.getColor(context, R.color.colorAccent))
+    }
+
+    alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)?.let {
+        it.setBackgroundColor(Color.TRANSPARENT)
+        it.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
+    }
+}
+
 fun alertFinish(context: Context, errorString: String){
     context.alert(errorString) {
         positiveButton(context.getString(R.string.ok)) {

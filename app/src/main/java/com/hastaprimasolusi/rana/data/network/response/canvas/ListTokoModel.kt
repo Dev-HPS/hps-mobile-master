@@ -15,5 +15,9 @@ data class ListTokoModel(
     @SerializedName("NAME")
     var nAME: String? = null,
     @SerializedName("URL")
-    var uRL: String? = null
+    var uRL: String? = null,
+    @SerializedName("LATITUDE")
+    var lATITUDE: String? = null,
+    @SerializedName("LONGITUDE")
+    var lONGITUDE: String? = null
 )
